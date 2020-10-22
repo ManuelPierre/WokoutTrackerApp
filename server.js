@@ -23,6 +23,8 @@ userFindAndModify: false});
 
 // app.use(require("./routes/view-routes.js"));
     require ("./routes/api-routes.js")(app);
+    require ("./routes/api-routes.js")(app);
+    require("./routes/html-routes.js")(app);
 
     app.listen(3000, () => (
         console.log("app running on port 3000!") 

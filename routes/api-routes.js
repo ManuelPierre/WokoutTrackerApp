@@ -1,4 +1,4 @@
-var workout = require("../models");
+var Workout = require("../models");
 var db = require("../models");
 
 module.exports= function(app){
@@ -14,8 +14,7 @@ module.exports= function(app){
     
   
    
-  app.post("/api/workouts", function(req,res){
-    
+  app.post("/api/workouts", function(req,res){    
     
     db.Workout.create({}).then(data=>{
       console.log("data", data)
