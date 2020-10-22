@@ -4,6 +4,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
 const PORT = 3000;
+const workout = require("./models/workoutModel.js");
 
 // const db = require("/Develop/models");
 

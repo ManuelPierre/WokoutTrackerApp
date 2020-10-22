@@ -1,29 +1,41 @@
 var workout = require("../models");
 
 module.exports= function(app){
-    app.get("/all", function (req, res){
-        workout.find({})
-            .then(data => {
-                res.json(data);
-            })
-            .catch(err => {
-                res.json(err);
-            });
-        });
+
+  app.get("/api/workouts", function(req,res){
+   
+    })
+    
+    
+    
+  
+   
+  app.post("/api/workouts", function(req,res){
+    
+    
+    db.Workout.create({}).then(data=>{
+      console.log("data", data)
+      res.json(data)
+    })
+    .catch(err => {
+      res.json(err);
+    });
+  })
+           
+            
+        
     
 
-    app.post("/submit", ({body}, res) => {
-        const workout = new workout(body);
+    // app.post("/exercise", (req, res) => {
+    //   const myNewWorkout = newWorkout({ name: req.body.exercise, age: req.body.age })
 
-        workout.Date();
-        
-      
-        workout.create(workout)
-          .then(dbWorkout => {
-            res.json(dbWorkout);
-          })
-          .catch(err => {
-            res.json(err);
-          });
-      });
-    }
+    //       workout.save().then(response=> {
+            
+
+    //           console.log("here is the response: ", response);
+              
+    //           }).catch(err => {
+    //           console.log("here is the error: ", err);
+    //           })
+    //     });
+      }
