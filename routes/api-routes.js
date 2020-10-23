@@ -25,20 +25,29 @@ module.exports= function(app){
     });
   })
            
+  // app.post("/submit", ({ body }, res) => {
+  //   db.Note.create(body)
+  //     .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true }))
+  //     .then(dbUser => {
+  //       res.json(dbUser);
+  //     })
+  //     .catch(err => {
+  //       res.json(err);
+  //     });
+  // });
             
         
     
 
-    // app.post("/exercise", (req, res) => {
-    //   const myNewWorkout = newWorkout({ name: req.body.exercise, age: req.body.age })
-
-    //       workout.save().then(response=> {
-            
-
-    //           console.log("here is the response: ", response);
-              
-    //           }).catch(err => {
-    //           console.log("here is the error: ", err);
-    //           })
-    //     });
+    app.put("/api/workouts/:id", ({ body }, res) => {
+   
+      db.Workout.create(body)
+      .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { Workout: _id } }, { new: true }))
+      .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
       }
