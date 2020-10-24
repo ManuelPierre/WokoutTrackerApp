@@ -58,12 +58,24 @@ module.exports= function(app){
     });
   })
 
+  app.put("/api/workouts/:id", ({body, params}, res) => {
+     db.Workout.findByIdAndUpdate( params.id, { $push: {exercises: body} }, { new: true })
+      .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+    })
+  
+
   // app.put("/api/workouts/:id", function(req,res) {
   //   Workout.findOneAndUpdate(
   //     { _id: req.params.id }, 
-  //     { $push: { exercises:[{ req.body.excercise }]},
+  //     { $push: { workouts:"req.body"},
     
-  // );
+  //   });
+  // })
 
 
     
