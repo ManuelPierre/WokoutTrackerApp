@@ -1,12 +1,12 @@
 const express = require("express");
-const mogojs = require("mongojs")
+const mongojs = require("mongojs")
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
-const PORT = 3000;
-const workout = require("./models/workoutModel.js");
+const PORT = process.env.PORT || 3000;
+const Workout = require("./models/workoutModel.js");
 
-// const db = require("/Develop/models");
+const db = require("./models");
 
 const app = express();
 
@@ -19,10 +19,11 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/workout", { 
     useNewUrlParser: true, 
-userFindAndModify: false});
+userFindAndModify: false
 
+});
+// require('./routes/api-routes.js')(app)
 // app.use(require("./routes/view-routes.js"));
-    require ("./routes/api-routes.js")(app);
     require ("./routes/api-routes.js")(app);
     require("./routes/html-routes.js")(app);
 
