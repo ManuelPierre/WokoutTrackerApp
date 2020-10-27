@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout", { 
+mongoose.connect("mongodb://localhost/mongoose_skeleton", { 
 //     useNewUrlParser: true, 
 // userFindAndModify: false
 useNewUrlParser: true,
