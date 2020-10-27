@@ -17,12 +17,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/mongoose_skeleton", { 
-//     useNewUrlParser: true, 
-// userFindAndModify: false
-useNewUrlParser: true,
-useUnifiedTopology: true,
-useCreateIndex: true,
-useFindAndModify: false
+    useNewUrlParser: true, 
+userFindAndModify: false
+// useNewUrlParser: true,
+// useUnifiedTopology: true,
+// useCreateIndex: true,
+// useFindAndModify: false
 });
 // require('./routes/api-routes.js')(app)
 // app.use(require("./routes/view-routes.js"));
