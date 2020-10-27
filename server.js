@@ -18,9 +18,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/workout", { 
-    useNewUrlParser: true, 
-userFindAndModify: false
-
+//     useNewUrlParser: true, 
+// userFindAndModify: false
+useNewUrlParser: true,
+useUnifiedTopology: true,
+useCreateIndex: true,
+useFindAndModify: false
 });
 // require('./routes/api-routes.js')(app)
 // app.use(require("./routes/view-routes.js"));
