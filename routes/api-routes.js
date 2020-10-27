@@ -20,9 +20,18 @@ module.exports= function(app){
   app.get("/exercise", (req, res) => {
     res.sendFile(path.join(__dirname + "/../public/exercise.html"));
   });
+  
 
-
-
+  app.get(`/api/workouts/range`, (req, res) => {
+    console.log("here first");
+    db.Workout.find({}).then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.json(err);
+        
+      });
+  });
 
   app.get("/api/workouts", (req, res) => {
     console.log("here first");
