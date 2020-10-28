@@ -11,8 +11,7 @@ module.exports= function(app){
 
   app.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname + "/../public/stats.html"));
-  });
-        
+  });       
     
 
     
@@ -78,85 +77,11 @@ module.exports= function(app){
     })
   
 
-  // app.put("/api/workouts/:id", function(req,res) {
-  //   Workout.findOneAndUpdate(
-  //     { _id: req.params.id }, 
-  //     { $push: { workouts:"req.body"},
-    
-  //   });
-  // })
+ 
 
 
     
-//   app.put("/api/workouts/:id", (req, res) => {
-  
-//     Workout.findOneAndUpdate({}, { $push: { Workout: _id } }, { new: true }))
-//     .then(dbWorkout => {
-//       res.json(dbWorkout);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-  
 
-
-
-
-//   app.put("/api/workouts/:id", ({ body }, res) => {
-  
-//     // db.Workout.create(body)
-//     // .then(({ _id }) =>
-//      db.WorkoutfindOneAndUpdate({}, { $push: { Workout: _id } }, { new: true }))
-//     .then(dbWorkout => {
-//       res.json(dbWorkout);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-  
-
-// app.put("/api/workouts/:id", function(req, res) {
-//   db.Workout.updateOne{}, { $push: { Workout: _id } }, { new: true }))
-//   .then(dbWorkout => {
-//     res.json(dbWorkout);
-//   })
-//   .catch(err => {
-//     res.json(err);
-//   });
-// });
-
-
-  
-  
-  // app.post("/api/workout", ({body}, res) => {
-  //   const workout = new Workout(body);
-  //   Workout.addExercise();
-   
-  
-  //   Workout.create({type: "req.body.type"})
-  //     .then(dbWorkout => {
-  //       res.json(dbWorkout);
-  //     })
-  //     .catch(err => {
-  //       res.json(err);
-  //     });
-  // });  
-   
-  // app.post("/api/workouts", (req,res) => {    
-  //   console.log("here");
-  //   console.log(body);
-  //   db.Workout.insert(req.body, (error, data) => {
-  //   .then(dbWorkout=>{
-  //     console.log(data)
-  //     res.json(data)
-  //   })
-  //   .catch(err => {
-  //     res.json(err);
-  //     res.status(400).json(err);
-  //   });
-  // })
  
   
 

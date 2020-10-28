@@ -25,8 +25,7 @@ mongoose.connect(
       useFindAndModify: false
     }
   );
-// require('./routes/api-routes.js')(app)
-// app.use(require("./routes/view-routes.js"));
+
     require ("./routes/api-routes.js")(app);
     require("./routes/html-routes.js")(app);
 
